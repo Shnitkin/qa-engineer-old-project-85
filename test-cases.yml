@@ -1,0 +1,253 @@
+---
+- summary: |
+    Проверка авторизации
+  requirement: |
+    При верном вводе логине и пароля пользователь должен войти в систему
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/
+  test-data: |
+    В поиске ввести Логин = Denis Пароль = 12345678
+  steps: 
+    - Вводим логин
+    - Вводим пароль
+    - Нажимаем кнопку «Войти»
+  expected-result: >
+    Пользователь должен попасть на главную страницу LOBBY.
+   
+- summary: |
+    Проверка поиска товаров по производителю.
+  requirement: |
+    При выборе любого производителя, сработает фильтр, который будет искать товары по производителю.
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/
+  test-data: |
+    В поиске ввести брэнды: Apple, Samsung, OPPO, Huawei, APPle, Microsoft Surface, Infinix, HP Pavilion, Impression of Acqua Di Gio, Royal_Mirage,  
+  steps: 
+    - В поиске ввести выбранные брэнды
+  expected-result: |
+    Должен отобразится весь список товаров: Apple, Samsung, OPPO, Huawei, APPle, Microsoft Surface, Infinix, HP Pavilion, Impression of Acqua Di Gio, Royal_Mirage
+    
+- summary: |
+    Проверка поиска товаров по цене
+  requirement: |
+    При выборе параметров сработает фильтр, который будет искать товары по цене
+  prerequisites: |
+    Открыть страницу # https://hexlet-products-store.vercel.app/
+  test-data: |
+    Ввести # от 1 до 20, от 20 до 120, от 120 до 1000.
+  steps:
+    - Ввести в поле от 0 до 20,
+    - Ввести в поле от 20 до 120,
+    - Ввести в поле от 120 до 1000.
+  expected-result: |
+    Должен отобразится список товаров стоимостью от 0 до 20, от 20 до 120, от 120 до 1000.
+   
+- summary: |
+    Отрицательные значения в фильтре
+  requirement: |
+    Проверка поиска товаров по цене при отрицательных значениях в фильтре
+  prerequisites: |
+    Открыть страницу # https://hexlet-products-store.vercel.app/
+  test-data: |
+    ввести  # от -100 до -220, от -20 до -170, от -620 до -1000.
+  steps:
+    - Ввести в поле поиск по цене  от -100 до -220,
+    - Ввести в поле от -20 до -170,
+    - Ввести в поле от -620 до -1000.
+  expected-result: |
+    Отобразится пустой сисок
+    
+    
+- summary: |
+    Фильтрация обычных цен 
+  requirement: |
+    Проверка поиска товаров по обычной цене. # зачёркнутая без скидки
+  prerequisites: |
+    Открыть страницу # https://hexlet-products-store.vercel.app/
+  test-data: |
+    ввести # iPhone 9 - цена 549$, iPhone X - цена 899$, Samsung Universe 9 - цена 1249$
+  steps:
+    - Ввести в поле поиск по цене от 549 до 549
+    - Ввести в поле от 899 до 900,
+    - Ввести в поле от 1249 до 2000.
+  expected-result: |
+    Отобразится список товаров 
+    
+    
+- summary: |
+    Фильтрация цен со скидкой
+  requirement: |
+    Проверка поиска товаров по обычной цене. # со скидкой выделенна красным
+  prerequisites: |
+    Открыть страницу # https://hexlet-products-store.vercel.app/
+  test-data: |
+    ввести # iPhone 9 - цена 477.85$, iPhone X - цена 737.72$, Samsung Universe 9 - цена 1055.90$
+  steps:
+    - Ввести в поле поиск по цене от 477.85 до 549
+    - Ввести в поле от 737.72 до 900,
+    - Ввести в поле от 1055.90 до 2000.
+  expected-result: |
+    Отобразится список товаров
+    
+    
+- summary: |
+    Хэштег перехода в категорию
+  requirement: |
+    Проверка поиска товаров с переходом в категорию
+  prerequisites: |
+    Открыть страницу # https://hexlet-products-store.vercel.app/
+  test-data: |
+    ввести # iPhone 9, MacBook Pro,  Eau De Perfume Spray
+  steps:
+    - в каталоге перейти в описание "iPhone 9"
+    - нажать ссылку #smartphones
+    - в каталоге перейти в описание "MacBook Pro"
+    - нажать ссылку #laptops
+    - в каталоге перейти в описание "Eau De Perfume Spray"
+    - нажать ссылку #fragrances
+  expected-result: |
+    Отобразится список товаров, имеющий отошение к данной категории
+   
+    
+- summary: |
+    Проверка возможности просматривать подробную информацию о товаре
+  requirement: |
+    Пользователь должен увидеть фото, описание товара.
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/
+  test-data: |
+    Ввести # https://hexlet-products-store.vercel.app/products/1
+  steps:
+    - выбрать из списка товаров iPhone 9
+    - кликнуть на фотографии расположенные ниже основного фото товара
+  expected-result: |
+    - Отобразится фото и описание товара
+   
+  
+- summary: |
+    Проверка добавление товара в корзину
+  requirement: |
+    Пользователь должен иметь возможность добавлять товары в корзину и просматривать содержимое корзины.
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/    
+  test-data: |
+    - # https://hexlet-products-store.vercel.app/products/1
+  steps:
+    - выбрать из списка товаров "iPhone 9", 
+    - нажать кнопку "В корзину"
+    - в шапке меню нажать кнопку "Корзина"
+    - открылось меню Корзины 
+  expected-result: |
+   Должен отобразится список добавленных товаров. 
+- summary: |
+    Проверка удаление товара из корзины
+  requirement: |
+    Пользователь должен иметь возможность удалять товары из корзины
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/    
+  test-data: |
+    в корзине должен быть любой товар.
+  steps:
+    - в шапке меню нажать кнопку "Корзина"
+    - открылось меню Корзины 
+    - нажать кнопку "Удалить" или "Отчистить корзину"
+  expected-result: |
+   Товар должен удалиться. 
+- summary: |
+    Оформление заказа.
+  requirement: |
+    При добавлении товара в корзину клиент может "Оформить заказ".
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/
+  test-data: |
+    Выбрать товар "iPhone 9"
+  steps:
+    - Нажать "В корзину"
+    - Перейти в корзину
+    - Нажимаем кнопку "Оформить заказ"
+  expected-result: |
+    Должен отобразится модуль "Заказ успешно оформлен"
+- summary: |
+    Проверка смены языков
+  requirement: |
+    Пользователь должен иметь возможность просматривать страницу на английском языке или русском
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/  # По умолчанию английский язык
+  test-data: | 
+    English or Russian
+  steps:
+    - Нажать в шапке меню Accordeon "Language"
+    - Выбрать "Russian"
+    - Перейти на главную страницу и выбрать любой товар
+    - Перейти в корзину 
+  expected-result: |
+      Текст описания товара, главная страница и корзина должны быть переведены на русский язык.
+ 
+
+
+- summary: |
+    Сайт должен иметь мобильную версию
+  requirement: |
+    Пользователь должен использовать мобильную версию
+  prerequisites: |
+    Смартфон Samsung A52, версия Android 13, Chrome 108.0.5359.128     
+  test-data: | 
+    Открыта страница https://hexlet-products-store.vercel.app/
+  steps:
+    - выбрать из списка товаров "Samsung Galaxy Book" и добавить в корзину.
+    - перейти в корзину / выйти
+    - напечатать "iPhone 9" в разделе "Найти" 
+    - отобразился iPhone 9
+    - проверка корректного отображения информации
+    - все окна расположенны симметрично
+    - время отклика
+  expected-result: |
+     Мобильное приложение работает.
+- summary: |
+    Проверка работоспособности на разных браузерах
+  requirement: |
+    Сайт должен быть протестирован на совместимость с последними версиями браузеров.
+  prerequisites: |
+    Открыть страницу https://hexlet-products-store.vercel.app/ с помощью Google Chrome, Microsoft Edge, Opera
+  test-data: >
+    Google Chrome Версия 108.0.5359.125 (64 бит),  Microsoft Edge Версия 108.0.1462.76 (64-разрядная версия), Opera Версия: 94.0.4606.54 (64-bit)
+    windows 10 (64)
+  steps:
+    - выбрать из списка товаров "Samsung Galaxy Book" и добавить в корзину.
+    - перейти в корзину / выйти
+    - напечатать "iPhone 9" в разделе "Найти" 
+    - отобразился iPhone 9
+    - проверка корректного отображения информации
+    - все окна расположены симметрично
+    - время отклика
+  expected-result: |
+     Сайт совместим с последними версиями браузеров.
+- summary: |
+    Проверка трафика 
+  requirement: |
+    Сайт должен быть способен обрабатывать большое количество трафика
+  prerequisites: |
+    apache-jmeter-5.5
+  test-data: | 
+    https://hexlet-products-store.vercel.app/
+  steps:
+   - Ввести http://hexlet-products-store.vercel.app/ в "http request" (ссылка screen2) 
+   - найти результат в "View results in Table"  (ссылка screen3) 
+  expected-result: |
+   Сайт обрабатывает большое количество трафика
+   
+ 
+ 
+- summary: |
+    Навигация по страницам каталога
+  requirement: |
+    В каталоге сайта должны быть переходы на следущие или предыдущие страницы
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ # По умолчанию английский язык
+  test-data: | 
+    "Previous" "Next"
+  steps:
+   - Нажать кнопку "Next" 3 раза
+   - Нажать кнопку "Previous" 3 раза
+  expected-result: |
+   В каталоге сайта работают переходы на следущие или предыдущие страницы
