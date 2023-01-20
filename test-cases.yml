@@ -6,26 +6,46 @@
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    В поиске ввести Логин = Denis Пароль = 12345678
+    Логин = shnitkin@mail.ru Пароль = 12345678
   steps: 
+    - Нажать Sign In
     - Вводим логин
     - Вводим пароль
-    - Нажимаем кнопку «Войти»
+    - Нажимаем кнопку «Submit»
   expected-result: >
     Пользователь должен попасть на главную страницу LOBBY.
+    
+- summary: |
+    Проверка входа пользователя с несуществующими логином и паролем
+  requirement: |
+    При неправильном логине или пароле пользователь должен получить сообщение об ошибке
+  prerequisites:
+    Открыта страница Открыта страница https://codebattle.hexlet.io/
+  test-data: |
+    Логин = Логин = dsf@sdgf.ru Пароль = badpass
+  steps:
+    - Нажать Sign In
+    - Вводим логин
+    - Вводим пароль
+    - Нажимаем кнопку «Submit»
+  expected-result: |
+    Должено отобразиться сообщение EMAIL_NOT_FOUND.
    
 - summary: |
     Проверка игры с ботом.
   requirement: |
-    При выборе любого производителя, сработает фильтр, который будет искать товары по производителю.
+    Пользователь должен иметь возможность играть с ботом
   prerequisites: |
-    Открыта страница https://hexlet-products-store.vercel.app/
+    Открыта страница https://hexlet-products-store.vercel.app/ 
   test-data: |
-    В поиске ввести брэнды: Apple, Samsung, OPPO, Huawei, APPle, Microsoft Surface, Infinix, HP Pavilion, Impression of Acqua Di Gio, Royal_Mirage,  
+    Логин = shnitkin@mail.ru Пароль = 12345678, Level *, 
   steps: 
-    - В поиске ввести выбранные брэнды
+    - Войти в аккаунт
+    - Нажать Create a game
+    - Выбрать With a Bot
+    - Нажать Create  battle
   expected-result: |
-    Должен отобразится весь список товаров: Apple, Samsung, OPPO, Huawei, APPle, Microsoft Surface, Infinix, HP Pavilion, Impression of Acqua Di Gio, Royal_Mirage
+    Должна отобразится страница, разделёная на 2 части экрана. Слева задача пользователя, с права бота.
     
 - summary: |
     Проверка поиска товаров по цене
