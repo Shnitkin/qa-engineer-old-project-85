@@ -113,22 +113,21 @@
     
     
 - summary: |
-    Выбора языка
+    Проверка смены языков
   requirement: |
     Пользователь должен иметь возможность выбора языка
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
   test-data: |
-    ввести # iPhone 9, MacBook Pro,  Eau De Perfume Spray
+    https://codebattle.hexlet.io/#lobby
   steps:
-    - в каталоге перейти в описание "iPhone 9"
-    - нажать ссылку #smartphones
-    - в каталоге перейти в описание "MacBook Pro"
-    - нажать ссылку #laptops
-    - в каталоге перейти в описание "Eau De Perfume Spray"
-    - нажать ссылку #fragrances
+    - В Lobby, выбрать из списка любого, ожидающего игры бота
+    - Запустить игру с ботом.
+    - Открыть вкладку TASK 
+    - Нажать Accordeon "EN" # по умолчанию английский
+    - Выбрать RU
   expected-result: |
-    Отобразится список товаров, имеющий отошение к данной категории
+    Условия задачи должны быть переведены на русский язык.
    
     
 - summary: |
