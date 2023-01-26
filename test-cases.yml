@@ -69,8 +69,11 @@
     Каждый игрок имеет кнопку "check" для проверки своего решения
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
-  test-data: |
-    https://codebattle.hexlet.io/games/117996
+  test-data: |  
+    решение
+    from typing import List, Dict
+    def solution(width: int, length: int) -> int:
+    return width * length
   steps:
     - Запустить игру с ботом
     - Решить задачу
@@ -86,7 +89,10 @@
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
   test-data: |
-    https://codebattle.hexlet.io/games/117996
+        решение
+    from typing import List, Dict
+    def solution(width: int, length: int) -> float:
+    return width * length
   steps:
     - Запустить игру с ботом
     - Решить задачу в Task неправильно
