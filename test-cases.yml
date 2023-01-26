@@ -128,63 +128,8 @@
     - Выбрать RU
   expected-result: |
     Условия задачи должны быть переведены на русский язык.
-   
     
-- summary: |
-    Сайт должен иметь мобильную версию
-  requirement: |
-    Пользователь должен использовать мобильную версию
-  prerequisites: |
-    Смартфон Samsung A52, версия Android 13, Chrome 108.0.5359.128     
-  test-data: | 
-    Открыта страница https://hexlet-products-store.vercel.app/
-  steps:
-    - выбрать из списка товаров "Samsung Galaxy Book" и добавить в корзину.
-    - перейти в корзину / выйти
-    - напечатать "iPhone 9" в разделе "Найти" 
-    - отобразился iPhone 9
-    - проверка корректного отображения информации
-    - все окна расположенны симметрично
-    - время отклика
-  expected-result: |
-     Мобильное приложение работает.
-- summary: |
-    Проверка работоспособности на разных браузерах
-  requirement: |
-    Сайт должен быть протестирован на совместимость с последними версиями браузеров.
-  prerequisites: |
-    Открыть страницу https://hexlet-products-store.vercel.app/ с помощью Google Chrome, Microsoft Edge, Opera
-  test-data: >
-    Google Chrome Версия 108.0.5359.125 (64 бит),  Microsoft Edge Версия 108.0.1462.76 (64-разрядная версия), Opera Версия: 94.0.4606.54 (64-bit)
-    windows 10 (64)
-  steps:
-    - выбрать из списка товаров "Samsung Galaxy Book" и добавить в корзину.
-    - перейти в корзину / выйти
-    - напечатать "iPhone 9" в разделе "Найти" 
-    - отобразился iPhone 9
-    - проверка корректного отображения информации
-    - все окна расположены симметрично
-    - время отклика
-  expected-result: |
-     Сайт совместим с последними версиями браузеров.
-     
-     
-- summary: |
-    Проверка трафика 
-  requirement: |
-    Сайт должен быть способен обрабатывать большое количество трафика
-  prerequisites: |
-    apache-jmeter-5.5
-  test-data: | 
-    https://hexlet-products-store.vercel.app/
-  steps:
-   - Ввести http://hexlet-products-store.vercel.app/ в "http request" (ссылка screen2) 
-   - найти результат в "View results in Table"  (ссылка screen3) 
-  expected-result: |
-   Сайт обрабатывает большое количество трафика
    
- 
- 
 - summary: |
     Навигация по игре
   requirement: |
@@ -199,3 +144,64 @@
     - Ввести Hello в чат
   expected-result: |
     Наверху находится время игры, ниже задание и справа чат.
+    
+    
+    
+- summary: |
+    Сайт должен иметь мобильную версию
+  requirement: |
+    Пользователь должен использовать мобильную версию
+  prerequisites: |
+    Смартфон Samsung A52, версия Android 13, Chrome 108.0.5359.128     
+  test-data: | 
+    Открыть страницу https://codebattle.hexlet.io/
+  steps:
+    - Войти в аккаунт
+    - Нажать Create a game
+    - Выбрать With a Bot
+    - Нажать Create  battle
+    - проверка корректного отображения информации
+    - все окна расположенны симметрично
+    - время отклика
+  expected-result: |
+    Мобильное приложение работает.
+    
+    
+     
+- summary: |
+    Проверка работоспособности на разных браузерах
+  requirement: |
+    Сайт должен быть протестирован на совместимость с последними версиями браузеров.
+  prerequisites: |
+    Открыть страницу https://codebattle.hexlet.io/ с помощью Google Chrome, Microsoft Edge, Opera
+  test-data: >
+    Google Chrome Версия 108.0.5359.125 (64 бит),  Microsoft Edge Версия 108.0.1462.76 (64-разрядная версия), Opera Версия: 94.0.4606.54 (64-bit)
+    windows 10 (64)
+  steps:
+    - Войти в аккаунт
+    - Нажать Create a game
+    - Выбрать With a Bot
+    - Нажать Create  battle
+    - проверка корректного отображения информации
+    - все окна расположены симметрично
+    - время отклика
+  expected-result: |
+    Сайт совместим с последними версиями браузеров.
+     
+     
+- summary: |
+    Проверка трафика 
+  requirement: |
+    Сайт должен быть способен обрабатывать большое количество трафика
+  prerequisites: |
+    apache-jmeter-5.5
+  test-data: | 
+    Страницу откроют одновременно 2000 пользователей
+  steps:
+   - ввести https://codebattle.hexlet.io в "http request" (ссылка screen1) 
+   - найти результат в "View results in Table"  (ссылка screen2) 
+  expected-result: |
+   Сайт обрабатывает большое количество трафика
+   
+ 
+ 
