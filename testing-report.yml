@@ -1,1 +1,45 @@
+---
+- summary: |
+    Проверка авторизации
+  status: pass
+
+- summary: |
+    Проверка входа с несуществующим логином и паролем
+  status: pass
+
+- summary: |
+    Проверка игры с пользователем
+  status: pass
+  
+- summary: |
+    Проверка своего решения
+  status: pass
+
+- summary: |
+    Победитель игры
+  status: pass
+
+- summary: |
+    Код соперника
+  status: pass
+  
+- summary: |
+    Проверка смены языков
+  status: pass
+
+- summary: |
+    Навигация по игре
+  status: pass
+
+- summary: |
+    Мобильная версия
+  status: pass
+  
+- summary: |
+    Проверка работоспособности на разных браузерах
+  status: pass
+
+- summary: |
+    Проверка трафика
+  status: fail
 
