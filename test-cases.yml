@@ -70,7 +70,10 @@
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
   test-data: |   
-    решение     # 1. from typing import List, Dict   2. def solution(width: int, length: int) -> float: 3. return width * length
+    решение 
+    # from typing import List, Dict 
+    # def solution(width: int, length: int) -> float: 
+    # return width * length
   steps:
     - Запустить игру с ботом
     - Решить задачу
