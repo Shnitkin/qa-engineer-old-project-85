@@ -6,7 +6,7 @@
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Логин = shnitkin@mail.ru Пароль = 12345678
+    Email = shnitkin@mail.ru Password = 12345678
   steps: 
     - Нажать Sign In
     - Вводим логин
@@ -22,7 +22,7 @@
   prerequisites:
     Открыта страница Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Логин = dsf@sdgf.ru Пароль = badpass
+    Email = dsf@sdgf.ru Password = badpass
   steps:
     - Нажать Sign In
     - Вводим логин
@@ -30,6 +30,22 @@
     - Нажимаем кнопку «Submit»
   expected-result: |
     Должено отобразиться сообщение EMAIL_NOT_FOUND.
+    
+- summary: |
+    Проверка авторизации
+  requirement: |
+    После регистрации аккаунта в Discord пользователь должен войти в систему
+  prerequisites: |
+    Открыта страница https://codebattle.hexlet.io/
+  test-data: |
+    Email = shnitkin333@mail.ru Password = 12345678    # для регистрации
+  steps: 
+    1. Открыта страница логина https://codebattle.hexlet.io/session/new?locale=en&next=%2F
+    2. Нажать "Sign in with Discord"
+    3. На редиректе Discord нажать "Авторизовать"
+  expected-result: >
+    Успешная авторизация через аккаунт Discord
+    
    
 - summary: |
     Проверка игры с ботом.
