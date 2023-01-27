@@ -7,7 +7,7 @@
     Проверка входа с несуществующим логином и паролем
   status: pass
   
-  - summary: |
+- summary: |
     Проверка авторизации через Discord
   status: fail
 
