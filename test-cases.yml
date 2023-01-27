@@ -40,9 +40,9 @@
   test-data: |
     Email = shnitkin333@mail.ru Password = 12345678    # для регистрации
   steps: 
-    1. Открыта страница логина https://codebattle.hexlet.io/session/new?locale=en&next=%2F
-    2. Нажать "Sign in with Discord"
-    3. На редиректе Discord нажать "Авторизовать"
+    - Открыта страница логина https://codebattle.hexlet.io
+    - Нажать "Sign in with Discord"
+    - На редиректе Discord нажать "Авторизовать"
   expected-result: >
     Успешная авторизация через аккаунт Discord
     
