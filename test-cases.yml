@@ -22,7 +22,7 @@
   prerequisites:
     Открыта страница Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Логин = Логин = dsf@sdgf.ru Пароль = badpass
+    Логин = dsf@sdgf.ru Пароль = badpass
   steps:
     - Нажать Sign In
     - Вводим логин
@@ -69,10 +69,8 @@
     Каждый игрок имеет кнопку "check" для проверки своего решения
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
-  test-data: |      решение
-    # from typing import List, Dict
-    # def solution(width: int, length: int) -> int:
-    # return width * length
+  test-data: |   
+    решение     # 1. from typing import List, Dict   2. def solution(width: int, length: int) -> float: 3. return width * length
   steps:
     - Запустить игру с ботом
     - Решить задачу
@@ -87,10 +85,8 @@
     Пользователь должен иметь возможность увидеть, кто является победителем этой игры.
   prerequisites: |
     Открыть страницу https://codebattle.hexlet.io/
-  test-data: |         решение
-    # from typing import List, Dict
-    # def solution(width: int, length: int) -> float:
-    # return width * length
+  test-data: | 
+    решение     # 1. from typing import List, Dict   2. def solution(width: int, length: int) -> float: 3. return width * length
   steps:
     - Запустить игру с ботом
     - Решить задачу в Task неправильно
